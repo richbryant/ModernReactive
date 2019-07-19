@@ -18,10 +18,8 @@ namespace ModernReactive.Intro
         {
             var viewModel = Locator.Current.GetService<IntroViewModel>();
             ViewModel = viewModel;
-            Console.WriteLine("Binding is awkward here");
             this.WhenActivated(disposable =>
             {
-                this.OneWayBind(ViewModel, vm => vm.IntroText, v => v.IntroText.Text).DisposeWith(disposable);
                 this.Bind(ViewModel, x => x.TheText, x => x.TheTextBox.Text)
                     .DisposeWith(disposable);
                 this.OneWayBind(ViewModel, x => x.TheText, x => x.TheTextBlock.Text)

@@ -7,8 +7,6 @@ namespace ModernReactive.Intro
 {
     public class IntroViewModel : ReactiveObject
     {
-        private string _introText;
-
         public IntroViewModel()
         {
             _theText = "I have altered the text.";
@@ -29,15 +27,7 @@ namespace ModernReactive.Intro
         private IObservable<Unit> ExecuteTextCommand()
         {
             TheText = "Pray I do not alter it any further";
-            Console.WriteLine("Clicked");
             return Observable.Return(Unit.Default);
         }
-
-        public string IntroText
-        {
-            get => _introText;
-            set => this.RaiseAndSetIfChanged(ref _introText, value);
-        }
-
     }
 }
