@@ -11,7 +11,7 @@ namespace ModernReactive.Intro
 
         public IntroViewModel()
         {
-            _introText = "I have altered the text.";
+            _theText = "I have altered the text.";
             Console.WriteLine("New IntroViewModel");
             TheTextCommand = ReactiveCommand
                 .CreateFromObservable(ExecuteTextCommand);
@@ -28,7 +28,7 @@ namespace ModernReactive.Intro
 
         private IObservable<Unit> ExecuteTextCommand()
         {
-            TheText = "Hello ReactiveUI";
+            TheText = "Pray I do not alter it any further";
             Console.WriteLine("Clicked");
             return Observable.Return(Unit.Default);
         }
