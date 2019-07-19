@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Windows;
+using DryIoc;
 using ModernReactive.Configs;
 using ModernReactive.Intro;
 using ModernReactive.Shell;
 using ReactiveUI;
 using Splat;
+using Splat.DryIoc;
 
 namespace ModernReactive
 {
@@ -24,9 +26,14 @@ namespace ModernReactive
 
         public void ConfigureService()
         {
-            Locator.CurrentMutable.Register(()=> new ShellView(), typeof(IViewFor<ShellViewModel>));
-            Locator.CurrentMutable.Register(()=> new IntroView(), typeof(IViewFor<IntroViewModel>));
-            Locator.CurrentMutable.Register(()=> new ConfigsView(), typeof(IViewFor<ConfigsViewModel>));
+            var container = new Container();
+            container.Register<IntroViewModel>();
+            container.Register<ConfigsViewModel>();
+            //Locator.CurrentMutable.Register(()=> new ShellView(), typeof(IViewFor<ShellViewModel>));
+            //Locator.CurrentMutable.Register(()=> new IntroView(), typeof(IViewFor<IntroViewModel>));
+            //Locator.CurrentMutable.Register(()=> new ConfigsView(), typeof(IViewFor<ConfigsViewModel>));
+
+            container.UseDryIocDependencyResolver();
         }
     }
 }

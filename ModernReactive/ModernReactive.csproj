@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DryIoc, Version=4.0.5.0, Culture=neutral, PublicKeyToken=dfbf2bd50fcf7768, processorArchitecture=MSIL">
+      <HintPath>..\packages\DryIoc.dll.4.0.5\lib\net45\DryIoc.dll</HintPath>
+    </Reference>
     <Reference Include="DynamicData, Version=6.11.0.2613, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamicData.6.11.0.2613\lib\net46\DynamicData.dll</HintPath>
     </Reference>
@@ -48,7 +51,10 @@
       <HintPath>..\packages\ReactiveUI.WPF.9.19.5\lib\net461\ReactiveUI.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Splat.8.0.1\lib\net461\Splat.dll</HintPath>
+      <HintPath>..\packages\Splat.8.0.5\lib\net461\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat.DryIoc, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.DryIoc.8.0.5\lib\netstandard2.0\Splat.DryIoc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
