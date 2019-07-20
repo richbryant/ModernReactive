@@ -5,14 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ModernReactive.Intro"
              xmlns:reactiveUi="http://reactiveui.net"
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Style="{StaticResource ContentRoot}">
-            <TextBlock Text="Hey, this is the intro control" x:Name="IntroText" />
-            <StackPanel Orientation="Vertical">
-                <TextBox x:Name="TheTextBox" />
-                <TextBlock x:Name="TheTextBlock" />
-                <Button x:Name="TheTextButton" />
-            </StackPanel>
+    <Grid Style="{StaticResource ContentRoot}" HorizontalAlignment="Left">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="ReactiveUI &amp; ModernUI" Style="{StaticResource Heading1}" Margin="0,0,0,8"/>
+                    <mui:BBCodeBlock BBCode="[b]ReactiveUI[/b] is an advanced, composable, functional reactive model-view-viewmodel framework for all .NET platforms, even on Android, iOS and the web! [url=https://reactiveui.net/]visit website[/url]" Margin="0,0,0,24" />
+                    <mui:BBCodeBlock BBCode="[b]Modern UI for WPF (MUI)[/b] is a set of controls and styles converting your WPF application into basically the old Zune app.  Which I like. [url=https://github.com/firstfloorsoftware/mui]visit website[/url]" Margin="0,0,0,24" /> 
+                    <mui:BBCodeBlock BBCode="[b]This app[/b] is about getting the benefits of ReactiveUI and the good bits of ModernUI.  It includes navigation via ReactiveCommand on an object that still triggers the correct menu position, dynamically creating your menu and how to bind to Navigation Events in the ViewModel."></mui:BBCodeBlock>
+                    <Button x:Name="ClickButton" Content="Click me!" Command="mui:LinkCommands.NavigateLink"/>
+                </StackPanel>
+            </ScrollViewer>
     </Grid>
 </reactiveUi:ReactiveUserControl>

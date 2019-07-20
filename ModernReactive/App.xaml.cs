@@ -27,8 +27,8 @@ namespace ModernReactive
         public void ConfigureService()
         {
             var container = new Container();
-            container.Register<IntroViewModel>();
-            container.Register<ConfigsViewModel>();
+            container.Register<IntroViewModel>(Reuse.Singleton);
+            container.Register<ConfigsViewModel>(Reuse.Singleton);
             //Locator.CurrentMutable.Register(()=> new ShellView(), typeof(IViewFor<ShellViewModel>));
             //Locator.CurrentMutable.Register(()=> new IntroView(), typeof(IViewFor<IntroViewModel>));
             //Locator.CurrentMutable.Register(()=> new ConfigsView(), typeof(IViewFor<ConfigsViewModel>));

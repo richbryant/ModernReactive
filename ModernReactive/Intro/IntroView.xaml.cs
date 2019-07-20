@@ -13,17 +13,15 @@ namespace ModernReactive.Intro
     {
         public IntroView()
         {
+            Console.WriteLine("Constructing");
             var viewModel = Locator.Current.GetService<IntroViewModel>();
             ViewModel = viewModel;
-            this.WhenActivated(disposable =>
+            this.WhenActivated(d =>
             {
-                this.Bind(ViewModel, x => x.TheText, x => x.TheTextBox.Text)
-                    .DisposeWith(disposable);
-                this.OneWayBind(ViewModel, x => x.TheText, x => x.TheTextBlock.Text)
-                    .DisposeWith(disposable);
-                this.BindCommand(ViewModel, x => x.TheTextCommand, x => x.TheTextButton)
-                    .DisposeWith(disposable);
+                this.OneWayBind(ViewModel, vm => vm.NavigateTarget, v => v.ClickButton.CommandParameter)
+                    .DisposeWith(d);
             });
+
         }
     }
 }

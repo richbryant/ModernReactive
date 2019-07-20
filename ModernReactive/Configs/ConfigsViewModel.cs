@@ -9,8 +9,8 @@ namespace ModernReactive.Configs
 
         public ConfigsViewModel()
         {
+            Console.WriteLine("Constructing");
             _configText = "Pray I do not alter it any further";
-            Console.WriteLine("New ConfigsViewModel");
         }
 
         public string ConfigText

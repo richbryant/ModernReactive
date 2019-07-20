@@ -10,7 +10,6 @@ namespace ModernReactive.Intro
         public IntroViewModel()
         {
             _theText = "I have altered the text.";
-            Console.WriteLine("New IntroViewModel");
             TheTextCommand = ReactiveCommand
                 .CreateFromObservable(ExecuteTextCommand);
         }
@@ -29,5 +28,7 @@ namespace ModernReactive.Intro
             TheText = "Pray I do not alter it any further";
             return Observable.Return(Unit.Default);
         }
+
+        public Uri NavigateTarget => new Uri($"/Configs/ConfigsView.xaml", UriKind.Relative);
     }
 }
