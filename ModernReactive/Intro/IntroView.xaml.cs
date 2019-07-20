@@ -9,11 +9,8 @@ namespace ModernReactive.Intro
     /// <summary>
     /// Interaction logic for Intro.xaml
     /// </summary>
-    public partial class IntroView : IViewFor<IntroViewModel>
+    public partial class IntroView
     {
-        public static readonly DependencyProperty ViewModelProperty = DependencyProperty
-            .Register(nameof(ViewModel), typeof(IntroViewModel), typeof(IntroView));
-
         public IntroView()
         {
             var viewModel = Locator.Current.GetService<IntroViewModel>();
@@ -27,19 +24,6 @@ namespace ModernReactive.Intro
                 this.BindCommand(ViewModel, x => x.TheTextCommand, x => x.TheTextButton)
                     .DisposeWith(disposable);
             });
-        }
-
-
-        object IViewFor.ViewModel
-        {
-            get => ViewModel;
-            set => ViewModel = (IntroViewModel)value;
-        }
-
-        public IntroViewModel ViewModel
-        {
-            get => (IntroViewModel) GetValue(ViewModelProperty);
-            set => SetValue(ViewModelProperty, value);
         }
     }
 }
